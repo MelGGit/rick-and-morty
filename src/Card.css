@@ -1,0 +1,25 @@
+.Card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  border-radius: 16px;
+  padding: 2rem 2.25rem;
+  width: min(90%, 35rem);
+  box-shadow: 0 0 10px rgb(25, 50, 81, 10%), 0 20px 40px rgb(25, 50, 81, 50%);
+}
+
+.Card__name {
+  text-align: center;
+}
+
+.Card__img {
+  width: 40%;
+  display: block;
+  border-radius: 50%;
+  align-self: center;
+}
+
+.Card__factsList {
+  list-style: none;
+}
