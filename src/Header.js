@@ -17,6 +17,7 @@ export default function Header({ handleButtonClick }) {
         {buttons.map(button => {
           return (
             <button
+              key={button}
               className={
                 clicked === button
                   ? 'Header__navButton Header__navClicked'
