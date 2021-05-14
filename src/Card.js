@@ -9,6 +9,7 @@ export default function Card({ character }) {
     fetch(character.episode[0])
       .then(res => res.json())
       .then(resBody => setEpisodes(resBody))
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   const style = {

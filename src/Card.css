@@ -10,6 +10,14 @@
   position: relative;
 }
 
+.Card:first-child {
+  margin-top: 3rem;
+}
+
+.Card:last-child {
+  margin-bottom: 3rem;
+}
+
 .Card__name {
   text-align: center;
 }

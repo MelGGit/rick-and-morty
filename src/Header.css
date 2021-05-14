@@ -1,0 +1,32 @@
+.Header {
+  padding: 20px;
+}
+
+.Header__nav {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+}
+
+.Header__navButton {
+  border: 1px solid black;
+  font-size: 125%;
+  font-weight: bold;
+  padding: 10px 20px;
+  background: inherit;
+  cursor: pointer;
+}
+
+.Header__navClicked {
+  background: blue;
+}
+
+@media (max-width: 600px) {
+  .Header__nav {
+    justify-content: center;
+  }
+  .Header__navButton {
+    font-size: 100%;
+  }
+}
