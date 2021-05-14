@@ -7,6 +7,7 @@
   padding: 2rem 2.25rem;
   width: min(90%, 35rem);
   box-shadow: 0 0 10px rgb(25, 50, 81, 10%), 0 20px 40px rgb(25, 50, 81, 50%);
+  position: relative;
 }
 
 .Card__name {
@@ -22,4 +23,18 @@
 
 .Card__factsList {
   list-style: none;
+}
+
+.Card__bookmark {
+  width: 2rem;
+  border: none;
+  background: inherit;
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.Card__bookmarkClicked {
+  fill: blue;
 }

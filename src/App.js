@@ -15,10 +15,10 @@ export default function App() {
   }, [url])
 
   return (
-    <div className="App">
+    <main className="App__characters">
       {characters.map(character => {
         return <Card character={character} />
       })}
-    </div>
+    </main>
   )
 }

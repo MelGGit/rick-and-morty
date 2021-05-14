@@ -3,11 +3,17 @@ import { useState, useEffect } from 'react'
 
 export default function Card({ character }) {
   const [episodes, setEpisodes] = useState({})
+  const [active, setActive] = useState(false)
+
   useEffect(() => {
     fetch(character.episode[0])
       .then(res => res.json())
       .then(resBody => setEpisodes(resBody))
   }, [])
+
+  const style = {
+    fill: active ? 'blue' : 'black',
+  }
 
   return (
     <section className="Card">
@@ -27,6 +33,24 @@ export default function Card({ character }) {
           Current location: {character.location.name}
         </li>
       </ul>
+      <button className="Card__bookmark" onClick={handleClick}>
+        <svg
+          style={style}
+          version="1.1"
+          xmlns="http://www.w3.org/2000/svg"
+          width="100%"
+          height="100%"
+          viewBox="0 0 32 32"
+          className="Card__bookmarkImg"
+        >
+          <title>bookmark</title>
+          <path d="M6 0v32l10-10 10 10v-32z"></path>
+        </svg>
+      </button>
     </section>
   )
+
+  function handleClick(event) {
+    setActive(!active)
+  }
 }
