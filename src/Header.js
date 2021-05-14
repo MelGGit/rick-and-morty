@@ -4,7 +4,7 @@ import { useState } from 'react'
 export default function Header({ handleButtonClick }) {
   const [clicked, setClicked] = useState('characters')
 
-  const buttons = ['characters', 'locations', 'episodes']
+  const buttons = ['characters', 'locations', 'episodes', 'bookmarks']
 
   function handleClick(name) {
     handleButtonClick(name)

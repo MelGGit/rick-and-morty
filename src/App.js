@@ -36,6 +36,9 @@ export default function App() {
       {currentPage === 'episodes' && (
         <main className="App__characters">Episodes</main>
       )}
+      {currentPage === 'bookmarks' && (
+        <main className="App__characters">Bookmarks</main>
+      )}
     </div>
   )
 }
