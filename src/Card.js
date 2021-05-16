@@ -19,7 +19,8 @@ export default function Card({ character }) {
   }, [])
 
   const bookmark = {
-    fill: active ? 'blue' : 'black',
+    fill: active ? 'black' : 'white',
+    stroke: 'black',
   }
 
   return (
@@ -86,11 +87,11 @@ export default function Card({ character }) {
     //   yAxis = (sizeContainer.height / 2 - event.clientY / 3) / 10
     // }
 
-    xAxis = (sizeContainer.width / 2 - (event.pageX - sizeContainer.left)) / 10
+    xAxis = (sizeContainer.width / 2 - (event.pageX - sizeContainer.left)) / 25
     yAxis =
       (sizeContainer.height / 2 -
         (event.pageY - sizeContainer.top - window.pageYOffset)) /
-      10
+      25
 
     // console.log(`clientY ${yAxis}`)
     // console.log(`clientX ${xAxis}`)
