@@ -2,6 +2,7 @@ import './App.css'
 import React, { useState, useEffect } from 'react'
 import Card from './Card'
 import Header from './Header'
+import Button from './Button'
 
 export default function App() {
   const [characters, setCharacters] = useState([])
@@ -28,6 +29,7 @@ export default function App() {
           {characters.map(character => {
             return <Card key={character.id} character={character} />
           })}
+          <Button />
         </main>
       )}
       {currentPage === 'locations' && (
