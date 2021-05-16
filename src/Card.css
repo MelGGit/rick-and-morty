@@ -9,15 +9,17 @@
   /* width: min(90%, 35rem); */
   box-shadow: 0 0 10px rgb(25, 50, 81, 10%), 0 20px 40px rgb(25, 50, 81, 50%);
   position: relative;
+  height: 40rem;
 }
 
 .Card__outerContainer {
   width: min(90%, 35rem);
-
   padding: 0 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
 }
 
 .Card__name {
