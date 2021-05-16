@@ -12,6 +12,10 @@
   height: 40rem;
 }
 
+.Card__animation {
+  transition: all 0.5s ease;
+}
+
 .Card__outerContainer {
   width: min(90%, 35rem);
   padding: 0 2rem;
@@ -24,6 +28,7 @@
 
 .Card__name {
   text-align: center;
+  transition: all 0.5s ease-out;
 }
 
 .Card__img {
@@ -31,10 +36,19 @@
   display: block;
   border-radius: 50%;
   align-self: center;
+  transition: all 0.5s ease-out;
 }
 
+.Card__info {
+  transition: all 0.5s ease-out;
+}
+
+.Card__factsHeading {
+  transition: all 0.5s ease-out;
+}
 .Card__factsList {
   list-style: none;
+  transition: all 0.5s ease-out;
 }
 
 .Card__bookmark {

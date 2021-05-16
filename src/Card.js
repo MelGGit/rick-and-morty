@@ -1,9 +1,15 @@
 import './Card.css'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 
 export default function Card({ character }) {
   const [episodes, setEpisodes] = useState({})
   const [active, setActive] = useState(false)
+  const card = useRef()
+  const image = useRef()
+  const heading = useRef()
+  const text = useRef()
+  const factsList = useRef()
+  const facts = useRef()
 
   useEffect(() => {
     fetch(character.episode[0])
@@ -12,7 +18,7 @@ export default function Card({ character }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  const style = {
+  const bookmark = {
     fill: active ? 'blue' : 'black',
   }
 
@@ -20,20 +26,24 @@ export default function Card({ character }) {
     <div
       className="Card__outerContainer"
       onMouseMove={handleMouseMove}
-      onMouseOut={handleMouseOut}
-      // onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      onMouseOver={handleMouseOver}
     >
-      <section className="Card">
-        <h2 className="Card__name">{character.name}</h2>
-        <img className="Card__img" src={character.image} alt="" />
-        <p className="Card__info">
+      <section className="Card" ref={card}>
+        <h2 className="Card__name" ref={heading}>
+          {character.name}
+        </h2>
+        <img className="Card__img" src={character.image} alt="" ref={image} />
+        <p className="Card__info" ref={text}>
           {character.name} is a character who debutet in the episode{' '}
           {episodes.name} which was realeased on {episodes.air_date}. This
           character's species is {character.species} and gender{' '}
           {character.gender}.
         </p>
-        <h3 className="Card__factsHeading">Some quick facts:</h3>
-        <ul className="Card__factsList">
+        <h3 className="Card__factsHeading" ref={factsList}>
+          Some quick facts:
+        </h3>
+        <ul className="Card__factsList" ref={facts}>
           <li className="Card__fact">Status: {character.status}</li>
           <li className="Card__fact">Origin: {character.origin.name}</li>
           <li className="Card__fact">
@@ -42,7 +52,7 @@ export default function Card({ character }) {
         </ul>
         <button className="Card__bookmark" onClick={handleClick}>
           <svg
-            style={style}
+            style={bookmark}
             version="1.1"
             xmlns="http://www.w3.org/2000/svg"
             width="100%"
@@ -95,21 +105,28 @@ export default function Card({ character }) {
     //   sizeContainer.height / 2 -
     //     (event.pageY - sizeContainer.top - window.pageYOffset)
     // )
+    // console.log(event.currentTarget)
 
-    event.currentTarget.querySelector(
-      'section'
-    ).style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`
+    card.current.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`
   }
 
-  function handleMouseOut(event) {
-    event.currentTarget.querySelector(
-      'section'
-    ).style.transform = `rotateY(0deg) rotateX(0deg)`
-    // event.currentTarget.querySelector('section').style.transition =
-    //   'all 0.5s ease'
+  function handleMouseLeave(event) {
+    card.current.style.transform = `rotateY(0deg) rotateX(0deg)`
+    card.current.style.transition = `all 0.5s ease`
+    image.current.style.transform = 'translateZ(0)'
+    heading.current.style.transform = 'translateZ(0)'
+    text.current.style.transform = 'translateZ(0)'
+    factsList.current.style.transform = 'translateZ(0)'
+    facts.current.style.transform = 'translateZ(0)'
   }
 
-  // function handleMouseEnter(event) {
-  //   event.currentTarget.querySelector('section').style.transition = 'none'
-  // }
+  function handleMouseOver(event) {
+    card.current.style.transition = `none`
+
+    heading.current.style.transform = 'translateZ(150px)'
+    image.current.style.transform = 'translateZ(140px)'
+    text.current.style.transform = 'translateZ(130px)'
+    factsList.current.style.transform = 'translateZ(120px)'
+    facts.current.style.transform = 'translateZ(110px)'
+  }
 }

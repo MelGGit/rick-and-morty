@@ -20,7 +20,8 @@
 }
 
 .Header__navClicked {
-  background: blue;
+  background: black;
+  color: white;
 }
 
 @media (max-width: 600px) {
