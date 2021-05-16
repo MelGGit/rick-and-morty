@@ -124,10 +124,10 @@ export default function Card({ character }) {
   function handleMouseOver(event) {
     card.current.style.transition = `none`
 
-    heading.current.style.transform = 'translateZ(150px)'
-    image.current.style.transform = 'translateZ(140px)'
-    text.current.style.transform = 'translateZ(130px)'
-    factsList.current.style.transform = 'translateZ(120px)'
-    facts.current.style.transform = 'translateZ(110px)'
+    heading.current.style.transform = 'translateZ(100px)'
+    image.current.style.transform = 'translateZ(90px)'
+    text.current.style.transform = 'translateZ(80px)'
+    factsList.current.style.transform = 'translateZ(70px)'
+    facts.current.style.transform = 'translateZ(60px)'
   }
 }

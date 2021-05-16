@@ -6,9 +6,7 @@ import Button from './Button'
 
 export default function App() {
   const [characters, setCharacters] = useState([])
-  const [url, setUrl] = useState(
-    'https://rickandmortyapi.com/api/character/?page=1'
-  )
+  const url = 'https://rickandmortyapi.com/api/character/?page=1'
   const [currentPage, setCurrentPage] = useState('characters')
 
   function handleButtonClick(name) {
@@ -19,7 +17,7 @@ export default function App() {
     fetch(url)
       .then(res => res.json())
       .then(resBody => setCharacters([...resBody.results]))
-  }, [url])
+  }, [])
 
   return (
     <div>
