@@ -1,25 +1,34 @@
 .Card {
+  transform-style: preserve-3d;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 30px;
   justify-content: center;
   border-radius: 16px;
   padding: 2rem 2.25rem;
-  width: min(90%, 35rem);
+  /* width: min(90%, 35rem); */
   box-shadow: 0 0 10px rgb(25, 50, 81, 10%), 0 20px 40px rgb(25, 50, 81, 50%);
   position: relative;
+  height: 40rem;
 }
 
-.Card:first-child {
-  margin-top: 3rem;
+.Card__animation {
+  transition: all 0.5s ease;
 }
 
-.Card:last-child {
-  margin-bottom: 3rem;
+.Card__outerContainer {
+  width: min(90%, 35rem);
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
 }
 
 .Card__name {
   text-align: center;
+  transition: all 0.5s ease-out;
 }
 
 .Card__img {
@@ -27,10 +36,19 @@
   display: block;
   border-radius: 50%;
   align-self: center;
+  transition: all 0.5s ease-out;
 }
 
+.Card__info {
+  transition: all 0.5s ease-out;
+}
+
+.Card__factsHeading {
+  transition: all 0.5s ease-out;
+}
 .Card__factsList {
   list-style: none;
+  transition: all 0.5s ease-out;
 }
 
 .Card__bookmark {

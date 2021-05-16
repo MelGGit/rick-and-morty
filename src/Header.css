@@ -1,5 +1,6 @@
 .Header {
   padding: 20px;
+  margin-bottom: 3rem;
 }
 
 .Header__nav {
@@ -19,7 +20,8 @@
 }
 
 .Header__navClicked {
-  background: blue;
+  background: black;
+  color: white;
 }
 
 @media (max-width: 600px) {
