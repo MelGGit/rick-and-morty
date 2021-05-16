@@ -19,7 +19,8 @@ export default function Card({ character }) {
   }, [])
 
   const bookmark = {
-    fill: active ? 'blue' : 'black',
+    fill: active ? 'black' : 'white',
+    stroke: 'black',
   }
 
   return (
